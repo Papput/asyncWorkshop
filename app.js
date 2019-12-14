@@ -10,7 +10,7 @@
  * make a request to the URL of each item (in parallel). ✔️
  *
  * 3. When we get a response back for each sub-request,
- * render the contents to their own UL-element.
+ * render the contents to their own UL-element. ✔️
  */
 
 const petsEl = document.querySelector('#pets');
