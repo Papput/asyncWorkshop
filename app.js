@@ -43,7 +43,11 @@ const renderPets = (title, pets) => {
 	petSectionEl.append(titleEl);
 	petSectionEl.append(petUlEl);
 
-	console.log(pets);
+	pets.sort( (a, b) => {
+		return a.name < b.name ? -1
+			: a.name > b.name ? 1
+			: 0;
+	})
 	pets.forEach( pet => {
 		let petLiEl = document.createElement('li');
 		petLiEl.innerText = `${pet.name}, Age: ${pet.age}`
