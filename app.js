@@ -31,11 +31,23 @@ const getPets = (url) => {
 }
 
 const renderPets = (title, pets) => {
+	if(petsEl.innerText == 'Loading...') {
+		petsEl.innerHTML = '';
+	}
+	let petSectionEl = document.createElement('section');
 	let titleEl = document.createElement('h2');
+	let petUlEl= document.createElement('ul');
 	titleEl.innerText = title;
-	console.log('Render pet', title)
+
+	petsEl.append(petSectionEl);
+	petSectionEl.append(titleEl);
+	petSectionEl.append(petUlEl);
+
+	console.log(pets);
 	pets.forEach( pet => {
-		console.log(pet.name);
+		let petLiEl = document.createElement('li');
+		petLiEl.innerText = `${pet.name}, Age: ${pet.age}`
+		petUlEl.append(petLiEl);
 	})
 }
 
